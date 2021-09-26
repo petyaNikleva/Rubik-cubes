@@ -31,7 +31,7 @@ class Cube {
     }
 
     static add(cube) {
-        Cube.cubes.push(cube)
+        Cube.#cubes.push(cube)
     }
 }
 
