@@ -1,17 +1,12 @@
 const express = require('express');
-const handlebars = require('express-handlebars');
-const path = require('path');
+const initHadlebars = require('./config/handlebars')
 
 const app = express();
 
-app.set('views', path.resolve('./src/views'))
-app.engine('hbs', handlebars({
-    extname: "hbs"
-}));
-app.set('view engine', 'hbs'); 
+initHadlebars(app);
 
 app.all('/', (req, res) => {
-    res.render('index', {layout: false})
+    res.render('index')
 });
 
-app.listen(5000, () => console.log("Appp is running on http://localhost:5000"));
+app.listen(5000, () => console.log("App is running on http://localhost:5000"));
