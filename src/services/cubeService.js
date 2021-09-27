@@ -1,3 +1,4 @@
+const { text } = require('express');
 const Cube = require('../models/Cube');
 
 const getAll = () => Cube.cubes;
@@ -11,10 +12,13 @@ const create = (name, description, imageUrl, difficulty) => {
     Cube.add(cube);
 };
 
+const search = (searchedText, from, to) => Cube.cubes.filter(x => x.name.toLowerCase().includes(searchedText.toLowerCase()));
+
 const cubeService = {
     create,
     getAll,
-    getOne
+    getOne,
+    search
 
 }
 
