@@ -12,7 +12,23 @@ const create = (name, description, imageUrl, difficulty) => {
     Cube.add(cube);
 };
 
-const search = (searchedText, from, to) => Cube.cubes.filter(x => x.name.toLowerCase().includes(searchedText.toLowerCase()));
+const search = (searchedText, from, to) =>  {
+    let result = Cube.cubes;
+
+    if (searchedText) {
+        result = result.filter(x => x.name.toLowerCase().includes(searchedText.toLowerCase()))
+    }
+
+    if (from) {
+        result = result.filter(x => x.difficulty >= from)
+    }
+
+    if (to) {
+        result = result.filter(x => x.difficulty <= to)
+    }
+    return result
+};
+
 
 const cubeService = {
     create,
