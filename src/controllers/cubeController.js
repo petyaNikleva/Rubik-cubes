@@ -12,11 +12,12 @@ const getCreateCubePage = (req, res) => {
 };
 
 const createCube = (req, res) => {
-    console.log(req.body);
+    //console.log(req.body);
 
     let { name, description, imageUrl, difficulty } = req.body;
 
     cubeService.create(name, description, imageUrl, difficulty);
+    console.log(cubeService.getAll());
 
     res.redirect('/')
 };

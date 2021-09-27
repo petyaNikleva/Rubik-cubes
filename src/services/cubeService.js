@@ -1,4 +1,3 @@
-const { text } = require('express');
 const Cube = require('../models/Cube');
 
 const getAll = () => Cube.cubes;
