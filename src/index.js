@@ -3,7 +3,9 @@ const initHadlebars = require('./config/handlebars')
 const path = require('path');
 const routes = require('./routes');
 const config = require('./config/config.json')[process.env.NODE_ENV || 'development'];
-
+const initDatabase = require('./config/database');
+const initDataBbse = require('./config/database');
+const { log } = require('console');
 
 const app = express();
 
@@ -14,5 +16,10 @@ initHadlebars(app);
 app.use(express.static(path.resolve(__dirname, './public')));
 app.use(routes);
 
-
-app.listen(config.PORT, console.log.bind(console, `Application is running on http:localhost:${config.PORT}`));
+initDatabase(config.DB_CONNECTION_STRING)
+    .then(() => {
+        app.listen(config.PORT, console.log.bind(console, `Application is running on http:localhost:${config.PORT}`));
+    })
+    .catch(err => {
+        console.log('Application init failed: ', err);
+    });
