@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const cubeSchema = new mongoose.Schema({
     name: {
         type: String,
-        required: true;
+        required: true
     },
     description: {
         type: String,
@@ -20,7 +20,7 @@ const cubeSchema = new mongoose.Schema({
             }, message: 'ImageUrl is invalid.'
         }
     },
-    difficultyLevel: {
+    difficulty: {
         type: Number,
         required: true,
         min: 1,
@@ -29,5 +29,5 @@ const cubeSchema = new mongoose.Schema({
 
 });
 
-
+const Cube = mongoose.model('Cube', cubeSchema)
 module.exports = Cube;
