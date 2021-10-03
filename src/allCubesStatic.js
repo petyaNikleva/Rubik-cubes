@@ -1,4 +1,4 @@
-{
+let cubes = [{
     id: 'fluc2i6ikku32oycf',
     name: 'Rubic Cube',
     description: 'This is standart Rubic Cube',
@@ -25,4 +25,4 @@
     description: 'Cube where you could add special photos or anything else.',
     imageUrl: 'https://images.promotionsonly.com.au/hires/traditional-rubik-cube.jpg',
     difficulty: '5'
-  }
+  }]
