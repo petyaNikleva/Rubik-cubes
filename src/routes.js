@@ -2,7 +2,7 @@ const express = require('express');
 
 const cubeController = require('./controllers/cubeController');
 const homeController = require('./controllers/homeController');
-const accessoryController = require('./controllers/accessortController');
+const accessoryController = require('./controllers/accessoryController');
 
 const router = express.Router();
 

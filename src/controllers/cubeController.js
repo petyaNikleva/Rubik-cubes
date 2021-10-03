@@ -12,7 +12,6 @@ const getCreateCubePage = (req, res) => {
 };
 
 const createCube = (req, res) => {
-    //console.log(req.body);
 
     let { name, description, imageUrl, difficulty } = req.body;
 
@@ -22,10 +21,10 @@ const createCube = (req, res) => {
     res.redirect('/')
 };
 
-const cubeDetails  = (req, res) => {
-    let cube = cubeService.getOne(req.params.cubeId);
+const cubeDetails  = async (req, res) => {
+    let cube = await cubeService.getOne(req.params.cubeId);
    
-    res.render('details', {cube});
+    res.render('cube/details', {...cube});
 };
 
 

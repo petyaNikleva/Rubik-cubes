@@ -4,8 +4,6 @@ const path = require('path');
 const routes = require('./routes');
 const config = require('./config/config.json')[process.env.NODE_ENV || 'development'];
 const initDatabase = require('./config/database');
-const initDataBbse = require('./config/database');
-const { log } = require('console');
 
 const app = express();
 
