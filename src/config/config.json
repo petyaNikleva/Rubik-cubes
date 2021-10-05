@@ -4,7 +4,7 @@
         "DB_CONNECTION_STRING": "mongodb://localhost:27017/cubes"
     },
     "production": {
-        "PORT": 80,
-        "DB_CONNECTION_STRING": ""
+        "PORT": 6001,
+        "DB_CONNECTION_STRING": "mongodb+srv://admin:Pz05102030@cluster0.utlmn.mongodb.net/RubikCubes?retryWrites=true&w=majority"
     }
 }
