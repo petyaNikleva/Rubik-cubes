@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const userSchema = new mongoose.Schema({
     username: {
         type: String,
-        required:TextTrackCue,
+        required: true,
         minlength: [3, "Username cannot be with less then 3 letters"]
     },
     password: {
