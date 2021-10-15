@@ -19,6 +19,7 @@ const userSchema = new mongoose.Schema({
 //     bcrypt.hash(this.password, 10)
 //         .then(hash => {
 //             this.password = hash;
+
 //             next();
 //         });
 // });
